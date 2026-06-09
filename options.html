@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cerebro — Options</title>
+  <style>
+    body { font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+    p.help { color: #555; margin: 0 0 1.5rem; }
+    label { display: block; font-weight: 500; margin-top: 1rem; }
+    input, select { width: 100%; box-sizing: border-box; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+    button { margin-top: 1.5rem; padding: 0.5rem 1rem; background: #7c5cff; color: white; border: 0; border-radius: 4px; cursor: pointer; font: inherit; }
+    button:hover { background: #6a4def; }
+    #status { margin-top: 1rem; min-height: 1.2rem; }
+    .status-ok { color: #047857; }
+    .status-err { color: #b91c1c; }
+    .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.85rem; color: #777; }
+    .footer a { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Cerebro extension settings</h1>
+  <p class="help">Get your API key at <a href="https://cerebro.frozo.ai/admin/mcp" target="_blank">cerebro.frozo.ai/admin/mcp</a>. It's stored locally in your browser — never synced.</p>
+
+  <label for="apiKey">API key
+    <input id="apiKey" type="password" placeholder="vc_…" autocomplete="off" />
+  </label>
+
+  <label for="defaultBucket">Default bucket
+    <select id="defaultBucket"></select>
+  </label>
+
+  <label for="defaultProject">Default project slug (optional)
+    <input id="defaultProject" type="text" placeholder="cerebro" />
+  </label>
+
+  <button id="save">Save</button>
+  <p id="status"></p>
+
+  <div class="footer">
+    Capture a page: right-click selected text → "Send selection to Cerebro", or click the toolbar icon for the popup form.
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

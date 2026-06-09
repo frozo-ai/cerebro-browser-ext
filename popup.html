@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Capture to Cerebro</title>
+  <style>
+    body { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; min-width: 360px; margin: 0; padding: 0.75rem 1rem 1rem; color: #1a1a1a; }
+    h1 { font-size: 1rem; margin: 0 0 0.75rem; }
+    label { display: block; margin-top: 0.6rem; font-weight: 500; font-size: 12px; color: #444; }
+    input, textarea, select { width: 100%; box-sizing: border-box; padding: 0.4rem; margin-top: 0.2rem; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+    textarea { resize: vertical; font: 12px ui-monospace, "SF Mono", Menlo, monospace; }
+    .row { display: flex; gap: 0.5rem; margin-top: 0.8rem; align-items: center; }
+    .row select { flex: 1; }
+    button { padding: 0.45rem 0.8rem; background: #7c5cff; color: white; border: 0; border-radius: 4px; cursor: pointer; font: inherit; }
+    button[disabled] { background: #aaa; cursor: progress; }
+    #status { margin-top: 0.7rem; min-height: 1.1rem; font-size: 12px; }
+    .ok { color: #047857; }
+    .err { color: #b91c1c; }
+    .warn { color: #b45309; }
+    .miss { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; padding: 0.5rem 0.6rem; border-radius: 4px; font-size: 12px; }
+    .miss a { color: #92400e; }
+  </style>
+</head>
+<body>
+  <h1>Capture to Cerebro</h1>
+
+  <div id="missing-key" class="miss" hidden>
+    No API key configured. <a href="#" id="openOptions">Open extension options</a> to add one.
+  </div>
+
+  <label for="title">Title
+    <input id="title" type="text" maxlength="200" />
+  </label>
+
+  <label for="body">Body (selection from this page)
+    <textarea id="body" rows="6"></textarea>
+  </label>
+
+  <div class="row">
+    <label style="flex:0 0 auto; margin: 0;" for="bucket">Bucket:</label>
+    <select id="bucket"></select>
+    <button id="send">Send</button>
+  </div>
+
+  <p id="status"></p>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
