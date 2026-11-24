@@ -37,7 +37,6 @@ Plain text only. No analytics. The API key + URL of the active tab are the only 
 
 ## Roadmap
 
-- v0.2 — replace placeholder icons with branded artwork
 - v0.3 — bucket guess from page metadata (Open Graph + headings)
 - v0.4 — submit to Chrome Web Store + Firefox AMO
 - v1.0 — hover-link to past memories of the same domain
